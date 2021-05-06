@@ -4,6 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>JS Bin</title>
+  <style>
+    .deck {
+      display:inline-block;
+      text-align:center;
+    }
+
+    .card{
+      width:100px;
+      height:170px;
+      display:block;
+      border: 1px solid black;
+    }
+  </style>
 </head>
 <body>
 <div class="deck" id="movement-deck">
@@ -18,5 +31,23 @@
     </div>
     <button id="draw-event-card"> draw </button>
   </div>
+  <script>
+    let movementCardElement = document.getElementById('movement-card');
+    let eventCardElement = document.getElementById('event-card');
+
+    let colors = ['red','orange','yellow','green','blue', 'indigo', 'violet'];
+    let eventCards = ['move again', "if you're wearing blue, move forward 1", 'collect a token' ]
+
+    let drawMovementButton = document.getElementById('draw-movement-card');
+    let drawEventButton = document.getElementById('draw-event-card');
+
+    drawMovementButton.addEventListener('click', ()=>{
+      movementCardElement.style.backgroundColor = colors[Math.trunc(Math.random() * colors.length)];
+    })
+
+    drawEventButton.addEventListener('click', ()=>{
+      eventCardElement.innerText = eventCards[Math.trunc(Math.random() * eventCards.length)];
+    })
+  </script>
 </body>
 </html>
