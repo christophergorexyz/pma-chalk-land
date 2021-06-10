@@ -1,0 +1,127 @@
+html,
+body {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#application-wrapper {
+  box-sizing: border-box;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#application-wrapper section {
+  margin: 0.5em;
+}
+
+#display-port {
+  flex: 4;
+  box-shadow: inset 0.5em 0.5em rgba(10, 10, 10, 0.6);
+  border-radius: 2em;
+  padding: 2em;
+}
+
+#display-port p {
+  text-align: center;
+  font-size: 1.2em;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  text-shadow: 0.1em 0.1em black;
+  color: white;
+}
+
+@keyframes spin-colors {
+  from {
+    filter: hue-rotate(900deg);
+  }
+  to {
+    filter: hue-rotate(0deg);
+  }
+}
+
+.glass {
+  background: skyblue;
+}
+
+.r,
+.o,
+.y,
+.g,
+.b,
+.i,
+.v {
+  animation: 3s ease-in-out spin-colors;
+}
+
+.r {
+  background: red;
+}
+.o {
+  background: darkorange;
+}
+.y {
+  background: yellow;
+}
+#display-port.y p {
+  text-shadow: none;
+  color: black;
+}
+.g {
+  background: green;
+}
+.b {
+  background: blue;
+}
+.i {
+  background: indigo;
+}
+.v {
+  background: darkviolet;
+}
+
+#control-panel {
+  flex: 2;
+}
+
+#move-control {
+  width: 100%;
+  height: 100%;
+  font-size: 6em;
+}
+
+#supplies {
+  flex: 1;
+}
+
+#supplies-icon {
+  font-size: 1.6em;
+  vertical-align: middle;
+}
+
+#supplies input {
+  width: 4em;
+}
+
+#collection {
+  display: flex;
+}
+
+.collection-item {
+  display: none;
+}
+
+.collection-item + label {
+  background: gray;
+  font-size: 3em;
+  box-sizing: border-box;
+  flex: 1;
+}
+.collection-item:checked + label {
+  border: 1px solid black;
+}
