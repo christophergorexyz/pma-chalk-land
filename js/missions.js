@@ -1,9 +1,9 @@
-export const EMPTY_RULE = {
+export const EMPTY_MISSION = {
   text: '',
   value: 0
 };
 
-export const RULES = [
+export const MISSIONS = [
   {
     text: "A Gaggle of Geese! Have your crew make a V-formation and flap your arms like a goose to the next space.",
     value: 2
@@ -21,7 +21,7 @@ export const RULES = [
     value: 1
   },
   {
-    text: "Show this world how to boogie! Dance to your next space. (",
+    text: "Show this world how to boogie! Dance to your next space.",
     value: 2
   },
   {
@@ -217,7 +217,7 @@ export const RULES = [
     value: 2
   },
   {
-    text: "The entire crew must play a round of truth or dare. (",
+    text: "The entire crew must play a round of truth or dare.",
     value: 3
   },
 ];

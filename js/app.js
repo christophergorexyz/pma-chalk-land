@@ -5,12 +5,12 @@ const ID_SUPPLIES_QUANTITY = "supplies-quantity";
 const ID_DECREASE = "decrease";
 const ID_INCREASE = "increase";
 
-const ID_MOVE_CONTROL = "move-control";
+const ID_MISSION_CONTROL = "mission-control";
 const ID_DISPLAY_PORT = "display-port";
 
-const COLLECTION_ITEMS = Object.freeze(["📻", "🚀", "⛽", "🌐", "📡"]);
+const COLLECTION_ITEMS = Object.freeze(["📻", "🚀", "⛽", "🌐"]);
 
-import { RULES, EMPTY_RULE } from "./rules.js";
+import { MISSIONS, EMPTY_MISSION } from "./missions.js";
 
 const COLORS = Object.freeze(["r", "o", "y", "g", "b", "i", "v"]);
 
@@ -22,28 +22,28 @@ export default class App {
   constructor() {
     this.renderCollectionItems();
     this.attachEventHandlers();
-    this._moves = this.generateMoves();
+    this._missions = this.generateMissions();
   }
 
   get nextMove() {
     return (
-      this._moves
-        .splice(Math.trunc(Math.random() * this._moves.length), 1)
+      this._missions
+        .splice(Math.trunc(Math.random() * this._missions.length), 1)
         .shift() || {
         color: COLORS[Math.trunc(Math.random() * COLORS.length)],
-        ...EMPTY_RULE,
+        ...EMPTY_MISSION,
       }
     );
   }
 
-  generateMoves() {
+  generateMissions() {
     let moves = [];
-    let totalCards = RULES.length * 1.25;
+    let totalCards = MISSIONS.length * 1.25;
     for (let i = 0; i <= totalCards; i++) {
       moves.push({
         color: COLORS[i % COLORS.length],
-        ...(RULES.splice(Math.trunc(Math.random() * RULES.length), 1).shift() ||
-          EMPTY_RULE),
+        ...(MISSIONS.splice(Math.trunc(Math.random() * MISSIONS.length), 1).shift() ||
+          EMPTY_MISSION),
       });
     }
     return moves;
@@ -58,7 +58,7 @@ export default class App {
       .getElementById(ID_INCREASE)
       .addEventListener("click", () => suppliesQuantity.stepUp());
     document
-      .getElementById(ID_MOVE_CONTROL)
+      .getElementById(ID_MISSION_CONTROL)
       .addEventListener("click", (e) => this.move(e));
     let collectionItems = document.getElementsByClassName('collection-item');
     for (let i = 0; i < collectionItems.length; i++) {
@@ -75,7 +75,7 @@ export default class App {
     if (this.animationTimer) {
       clearTimeout(this.animationTimer);
       //place the card at the bottom of the deck
-      this._moves.push(move);
+      this._missions.push(move);
     }
 
     let displayPort = document.getElementById(ID_DISPLAY_PORT);

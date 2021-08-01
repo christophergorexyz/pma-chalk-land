@@ -1,0 +1,11 @@
+.intro{
+  font-style: italic;
+}
+.directive{
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.keyword{
+  color: crimson;
+}
