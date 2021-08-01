@@ -63,7 +63,7 @@ export default class App {
     let collectionItems = document.getElementsByClassName('collection-item');
     for (let i = 0; i < collectionItems.length; i++) {
       collectionItems[i].addEventListener("click", function (e) {
-        this.disabled = true;
+        //this.disabled = true;
         //TODO: display collection message
       });
     }
