@@ -1,34 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Chalkland</title>
-    <link rel="stylesheet" href="./index.css" />
-  </head>
-  <body>
-    <main id="application-wrapper">
-      <section id="display-port" class="glass">&nbsp;</section>
-      <section id="control-panel">
-        <button id="move-control">⇧</button>
-      </section>
-      <section id="supplies">
-        <p>
-          <button id="decrease">➖</button>
-          <input
-            id="supplies-quantity"
-            type="number"
-            min="0"
-            step="1"
-            value="0"
-          />
-          <button id="increase">➕</button>
-          ✕
-          <span id="supplies-icon">🧪</span>
-        </p>
-      </section>
-      <section id="collection"></section>
-    </main>
-    <script src="./index.js" type="module"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Chalkland</title>
+  <link rel="stylesheet" href="./index.css" />
+</head>
+
+<body>
+  <main id="application-wrapper">
+    <section id="display-port" class="glass">&nbsp;</section>
+    <section id="control-panel">
+      <div id="move-wrapper">
+        <button id="move-control">↑</button>
+      </div>
+      <div id="supplies">
+        <button id="increase">➕</button>
+        <div>
+          <input id="supplies-quantity" type="number" min="0" step="1" value="0" /> ✕ <span id="supplies-icon">🧪</span>
+        </div>
+        <button id="decrease">➖</button>
+      </div>
+    </section>
+
+    <section id="collection"></section>
+  </main>
+  <script src="./index.js" type="module"></script>
+</body>
+
 </html>

@@ -38,7 +38,7 @@ export default class App {
 
   generateMoves() {
     let moves = [];
-    let totalCards = RULES.length*1.25;
+    let totalCards = RULES.length * 1.25;
     for (let i = 0; i <= totalCards; i++) {
       moves.push({
         color: COLORS[i % COLORS.length],
@@ -60,6 +60,14 @@ export default class App {
     document
       .getElementById(ID_MOVE_CONTROL)
       .addEventListener("click", (e) => this.move(e));
+    let collectionItems = document.getElementsByClassName('collection-item');
+    for (let i = 0; i < collectionItems.length; i++) {
+      collectionItems[i].addEventListener("click", function (e) {
+        this.disabled = true;
+        //TODO: display collection message
+      });
+    }
+
   }
 
   move(_e) {

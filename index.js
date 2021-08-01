@@ -1,1 +1,1 @@
-import('./app.js').then(({default: App})=> App.init())
+import('./app.js').then(({ default: App }) => App.init());

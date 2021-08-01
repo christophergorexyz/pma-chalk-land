@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Tourney:wght@900&display=swap');
+
 html,
 body {
   height: 100%;
@@ -6,6 +8,8 @@ body {
 
 body {
   margin: 0;
+  background: dimgray;
+  font-family: 'Tourney', Courier, monospace;
 }
 
 #application-wrapper {
@@ -29,8 +33,8 @@ body {
 
 #display-port p {
   text-align: center;
-  font-size: 1.2em;
-  font-family: "Courier New", Courier, monospace;
+  font-size: 1.4em;
+  letter-spacing: 0.1rem;
   font-weight: bold;
   text-shadow: 0.1em 0.1em black;
   color: white;
@@ -87,16 +91,29 @@ body {
 
 #control-panel {
   flex: 2;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+#move-wrapper {
+  flex: 2;
 }
 
 #move-control {
-  width: 100%;
-  height: 100%;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 6rem;
+  color: white;
+  background: crimson;
   font-size: 6em;
 }
 
 #supplies {
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
 }
 
 #supplies-icon {
@@ -104,8 +121,18 @@ body {
   vertical-align: middle;
 }
 
-#supplies input {
-  width: 4em;
+
+#supplies input,
+#supplies button {
+  width: 2.5rem;
+  height: 2.5rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#supplies input{
+  font-size: 1.5rem;
+  font-family: 'Tourney', Courier, monospace;
 }
 
 #collection {
@@ -121,6 +148,8 @@ body {
   font-size: 3em;
   box-sizing: border-box;
   flex: 1;
+  justify-content: space-between;
+  text-align: center;
 }
 .collection-item:checked + label {
   border: 1px solid black;
