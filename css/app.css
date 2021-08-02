@@ -125,6 +125,7 @@ body.app{
 
 #supplies input{
   font-size: 1.5rem;
+  width: 5rem;
   font-family: 'Tourney', Courier, monospace;
 }
 
